@@ -2,14 +2,10 @@
 <div class="jumbotron">
   <div class="container">
     <div class="head">
-    <h1>Car</h1>
+    <h1><center><%= @vehicle.make %></center></h1>
     </div>
     </div>
-<p>
-  <strong>Make:</strong>
-  <%= @vehicle.make %>
-</p>
-
+    
 <p>
   <strong>Model:</strong>
   <%= @vehicle.model %>
@@ -30,6 +26,21 @@
   <strong>Location:</strong>
   <%= @vehicle.location %>
 </p>
+
+<div class="panel panel-default">
+  <div class="panel-header">
+<h3><u>Previous Owners</u></h3>
+</div>
+<% @vehicle.owners.each do |owner| %>
+<div class="panel-body">
+  <p><strong>Owner: </strong><%= owner.name %></p>
+  <p><strong>Address: </strong><%= owner.address %></p>
+ <p><strong>Contact Information: </strong><%= owner.contact_info %></p>
+  <% end %>
+  </div>
+  </div>
+
+<%= render 'owners/form' %>
 
 <%= link_to 'Edit', edit_vehicle_path(@vehicle) %> |
 <%= link_to 'Back', vehicles_path %>

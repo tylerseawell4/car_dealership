@@ -4,7 +4,7 @@
 
 <div class='row'>
     <% @vehicles.each do |car| %>
-      <div class="col-md-6">
+      <div class="col-md-3">
         <div class="panel panel-default">
           <div class="panel-heading">
          <%= link_to car.make, car%>
@@ -14,15 +14,9 @@
         Year: <%= car.year %><br />
         Location: <%=  car.location %> <br />
         Description: <%= truncate(car.description, length: 300, separator: " ") %> <br /><%= link_to 'Read More', car %>
-
-     
-      
       <%= image_tag car.avatar.url(:medium), class: "img-responsive" %>
-     
-
         </div>
         <div class="panel-footer">
-       
         <%= link_to 'Edit', edit_vehicle_path(car), class: "btn btn-warning" %>
         <%= link_to 'Destroy', car, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
       </div>

@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
+  resources :owners
+  resources :dealerships
   resources :vehicles
-  root "vehicles#index"
+  root 'welcome#index'
+ 
+ 
+
+  
 
 end
