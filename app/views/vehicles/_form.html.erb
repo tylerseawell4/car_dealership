@@ -28,13 +28,12 @@
     <%= f.text_area :description %>
   </div>
   <div class="field">
-    <%= f.label :location %><br>
-    <%= f.text_field :location %>
-  </div>
-  <div class="field">
     <%= f.label "Photo" %><br>
     <%= f.file_field :avatar %>
   </div>  
+   <div class="field form-group">
+    <%= f.collection_select(:location_id, Location.all, :id, :name) %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

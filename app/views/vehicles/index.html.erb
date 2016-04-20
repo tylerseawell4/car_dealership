@@ -12,7 +12,6 @@
           <div class="panel-body">
          Model: <%= car.model %><br />
         Year: <%= car.year %><br />
-        Location: <%=  car.location %> <br />
         Description: <%= truncate(car.description, length: 300, separator: " ") %> <br /><%= link_to 'Read More', car %>
       <%= image_tag car.avatar.url(:medium), class: "img-responsive" %>
         </div>

@@ -11,9 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160419174625) do
+ActiveRecord::Schema.define(version: 20160420134258) do
 
+  # create_table "dealerships", force: :cascade do |t|
+  #   t.string   "address"
+  #   t.string   "rating"
+  #   t.datetime "created_at", null: false
+  #   t.datetime "updated_at", null: false
+  # end
 
+  create_table "locations", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "rating"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "owners", force: :cascade do |t|
     t.string   "name"
@@ -29,13 +41,14 @@ ActiveRecord::Schema.define(version: 20160419174625) do
     t.string   "model"
     t.integer  "year"
     t.text     "description"
-    t.string   "location"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.integer  "dealership_id"
+    t.integer  "location_id"
   end
 
 end
